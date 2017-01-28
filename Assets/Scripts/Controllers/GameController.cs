@@ -23,7 +23,16 @@ public class GameController : MonoBehaviour {
         }
     }
 
-    public PlayerController playerController { get { return _playerController; } }
+    public PlayerController playerController
+    {
+        get {
+            if (_playerController == null)
+            {
+                _playerController = new PlayerController();
+            }
+            return _playerController;
+        }
+    }
 
     internal bool endlevel;
     internal int actualLevel;
@@ -31,7 +40,7 @@ public class GameController : MonoBehaviour {
     private PlayerController _playerController;
     private static GameController instance = null;
    
-    private enum ScenesNames
+    public enum ScenesNames
     {
         MenuGame,
         Level_1
@@ -64,6 +73,11 @@ public class GameController : MonoBehaviour {
     public void startGame()
     {
         Application.LoadLevel(ScenesNames.Level_1.ToString());
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        Application.LoadLevel(sceneName);
     }
 
     public IEnumerator sleepThred(int timeSleep)

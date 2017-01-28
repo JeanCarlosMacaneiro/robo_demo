@@ -158,4 +158,9 @@ public class CanvasController : MonoBehaviour {
         GameController.Instance.startGame();
         finishPanel.SetActive(false);
     }
+
+    public void buttonActionReturnMenu()
+    {
+        GameController.Instance.LoadScene(GameController.ScenesNames.MenuGame.ToString());
+    }
 }
