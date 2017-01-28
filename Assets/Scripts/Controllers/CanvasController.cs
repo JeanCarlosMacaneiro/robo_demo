@@ -4,6 +4,10 @@ using UnityEngine.UI;
 using System;
 using UnityStandardAssets._2D;
 
+
+/*<summary> 
+   This Class is responsible for All controls the UI in the level Scene
+</summary> */
 public class CanvasController : MonoBehaviour {
 
     public Text textScore;
